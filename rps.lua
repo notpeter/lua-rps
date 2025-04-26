@@ -16,10 +16,10 @@ while true do
     if player == nil then
         print("Invalid move")
     elseif winner(player, opponent) then
-        print("You win! " .. names[player] .. " beats " .. names[opponent])
+        print(string.format("You win! %s beats %s.", names[player], names[opponent]))
     elseif winner(opponent, player) then
-        print("You lose! " .. names[opponent] .. " beats " .. names[player])
+        print(string.format("You lose! %s beats %s.", names[opponent], names[player]))
     else
-        print("It's a tie! Both chose " .. names[player])
+        print(string.format("It's a tie! Both chose %s.", names[player]))
     end
 end
