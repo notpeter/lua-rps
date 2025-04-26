@@ -13,10 +13,9 @@ local player = choices[move]
 if player == nil then
     print("Invalid move")
 elseif winner(player, opponent) then
-    print("You Win!")
+    print("You win! " .. names[player] .. " beats " .. names[opponent])
 elseif winner(opponent, player) then
-    print("You Lose!")
+    print("You lose! " .. names[opponent] .. " beats " .. names[player])
 else
-    print("Tie!")
+    print("It's a tie! Both chose " .. names[player])
 end
-print(names[opponent])
