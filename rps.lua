@@ -1,35 +1,22 @@
-local moves = { "rock", "paper", "scissors" }
-local number = math.random(1, 3)
+local choices = { rock = 0, paper = 1, scissors = 2 }
+local names = { [0] = "rock", [1] = "paper", [2] = "scissors" }
+local opponent = math.random(3)
+
+local function winner(a, b)
+    return a - b % 3 == 1
+end
+
 print("Welcome to Rock Paper Scissors!\nChoose Your Move!")
 local move = string.lower(io.read("*l"))
-if move == "rock" then
-    if number == 1 then
-        print("Tie!")
-    elseif number == 2 then
-        print("You Lose!")
-    else
-        print("You Win!")
-    end
-end
 
-if move == "paper" then
-    if number == 1 then
-        print("You Win!")
-    elseif number == 2 then
-        print("Tie!")
-    else
-        print("You Lose!")
-    end
+local player = choices[move]
+if player == nil then
+    print("Invalid move")
+elseif winner(player, opponent) then
+    print("You Win!")
+elseif winner(opponent, player) then
+    print("You Lose!")
+else
+    print("Tie!")
 end
-
-if move == "scissors" then
-    if number == 1 then
-        print("You Lose!")
-    elseif number == 2 then
-        print("You Win!")
-    else
-        print("You Lose!")
-    end
-end
-
-print(moves[number])
+print(names[opponent])
