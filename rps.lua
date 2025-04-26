@@ -1,7 +1,7 @@
-table = { "rock", "paper", "scissors" }
-number = math.random(1, 3)
+local moves = { "rock", "paper", "scissors" }
+local number = math.random(1, 3)
 print("Welcome to Rock Paper Scissors!\nChoose Your Move!")
-move = string.lower(io.read("*l"))
+local move = string.lower(io.read("*l"))
 if move == "rock" then
     if number == 1 then
         print("Tie!")
@@ -32,4 +32,4 @@ if move == "scissors" then
     end
 end
 
-print(table[number])
+print(moves[number])
